@@ -19,8 +19,8 @@ const getAccessToken = async () => {
       refresh_token
     })
   });
-  response = await response.json();
-  return response;
+  const res = await response.json();
+  return res;
 };
 
 export const getNowPlaying = async () => {
