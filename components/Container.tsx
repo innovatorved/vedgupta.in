@@ -40,7 +40,8 @@ export default function Container(props) {
   const meta = {
     title: 'Ved Prakash Gupta – Developer, creator.',
     description: `Full Stack developer, JavaScript enthusiast, and Python Developer.`,
-    image: 'https://blog.nextinnovate.tech/static/images/innovatorved-banner.png',
+    image:
+      'https://blog.nextinnovate.tech/static/images/innovatorved-banner.png',
     type: 'website',
     ...customMeta
   };

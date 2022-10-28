@@ -28,7 +28,7 @@ module.exports = {
 const ContentSecurityPolicy = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-    child-src *.youtube.com *.google.com *.twitter.com;
+    child-src *.youtube.com *.google.com *.twitter.com 'self';
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
     media-src 'none';
@@ -50,7 +50,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'DENY'
+    value: 'SAMEORIGIN'
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
