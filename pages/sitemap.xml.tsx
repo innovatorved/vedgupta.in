@@ -4,14 +4,14 @@ import { postSlugsQuery } from 'lib/queries';
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${slugs
-          .map((slug) => {
-            return `
+    .map((slug) => {
+      return `
                 <url>
                     <loc>${`https://blog.nextinnovate.tech/${slug}`}</loc>
                 </url>
             `;
-          })
-          .join('')}
+    })
+    .join('')}
     </urlset>
 `;
 export async function getServerSideProps({ res }) {
@@ -24,9 +24,8 @@ export async function getServerSideProps({ res }) {
       'blog',
       'dashboard',
       'guestbook',
-      'newsletter',
       'tweets',
-      'uses'
+      'resume'
     ]
   ];
 
