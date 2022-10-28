@@ -55,7 +55,7 @@ export default function BlogLayout({
           <div className="text-sm text-gray-700 dark:text-gray-300">
             <a
               href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-                `http://localhost:3000/blog/${post.slug}`
+                `https://blog.nextinnovate.tech/blog/${post.slug}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export default function BlogLayout({
             </a>
             {` • `}
             <a
-              href="https://github.com/leerob/leerob.io/issues"
+              href="https://github.com/innovatorved/blog.nextinnovate.tech/issues"
               target="_blank"
               rel="noopener noreferrer"
             >
