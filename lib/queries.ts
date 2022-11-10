@@ -7,6 +7,24 @@ const postFields = `
   "slug": slug.current,
 `;
 
+const postInformation = `
+  _id,
+  title,
+  date,
+  excerpt,
+  website,
+  author->{
+    name,
+    image
+  },
+  content,
+  categories[]-> {
+    title
+  },
+  coverImage,
+  "slug": slug.current,
+`;
+
 export const indexQuery = `
 *[_type == "post"] | order(date desc, _updatedAt desc) {
   ${postFields}
@@ -15,8 +33,7 @@ export const indexQuery = `
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
-    content,
-    ${postFields}
+    ${postInformation}
   }
 }`;
 

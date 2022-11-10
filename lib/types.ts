@@ -7,10 +7,17 @@ export type Post = {
   title: string;
   date: string;
   excerpt: string;
+  website: string;
+  author: { name: string; image: string };
+  categories?: Categories[] | null;
   coverImage: string;
   readingTime: string;
   tweets?: any[] | null;
 };
+
+export interface Categories {
+  title: string;
+}
 
 export type Snippet = {
   _id: string;

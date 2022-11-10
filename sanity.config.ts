@@ -52,7 +52,10 @@ export default createConfig({
           {
             name: 'coverImage',
             title: 'Cover Image',
-            type: 'image'
+            type: 'image',
+            options: {
+              hotspot: true
+            }
           },
           {
             name: 'categories',

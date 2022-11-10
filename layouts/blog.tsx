@@ -5,7 +5,7 @@ import { PropsWithChildren, Suspense } from 'react';
 import Container from 'components/Container';
 import Subscribe from 'components/Subscribe';
 import ViewCounter from 'components/ViewCounter';
-import { Post } from 'lib/types';
+import { Post, Categories } from 'lib/types';
 import { urlForImage } from 'lib/sanity';
 
 export default function BlogLayout({
@@ -28,14 +28,14 @@ export default function BlogLayout({
           <div className="flex items-center">
             <Image
               alt="Ved Gupta"
-              height={24}
-              width={24}
+              height={32}
+              width={32}
               sizes="20vw"
-              src="/avatar.jpg"
+              src={urlForImage(post.author.image).url()}
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {'Ved Prakash Gupta / '}
+              {`${post.author.name} / `}
               {format(parseISO(post.date), 'MMMM dd, yyyy')}
             </p>
           </div>
@@ -45,9 +45,50 @@ export default function BlogLayout({
             <ViewCounter slug={post.slug} />
           </p>
         </div>
+        <div className="my-4">
+          <Image
+            alt={post.title}
+            height={1024}
+            width={1024}
+            sizes="100vw"
+            src={urlForImage(post.coverImage).url()}
+            className="rounded-sm"
+          />
+        </div>
+        <div className="text-gray-700 dark:text-white">
+          <h2 className="inline-block font-bold">{post.title}</h2>
+          {' - '}
+          <p>{post.excerpt}</p>
+        </div>
         <Suspense fallback={null}>
           <div className="w-full mt-4 prose dark:prose-dark max-w-none">
             {children}
+          </div>
+          <div className="m-4">
+            <span className="text-xs dark:prose-dark text-gray-700">
+              {`visit -> `}
+            </span>
+            <a
+              href={post.website}
+              className="underline text-blue-600 hover:text-blue-700 dark:hover:text-blue-900 dark:visited:text-purple-600 visited:text-purple-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {post.website}
+            </a>
+          </div>
+          <div className="prose dark:prose-dark space-x-2 mt-8">
+            <span>Categories :</span>
+            {post.categories.map((category: Categories, key) => {
+              return (
+                <span
+                  key={key}
+                  className="inline bg-none rounded border-solid border cursor-pointer items-center px-2 py-1 gap-1"
+                >
+                  <strong className="mr-2">{category.title}</strong>
+                </span>
+              );
+            })}
           </div>
           <div className="mt-8">
             <Subscribe />
