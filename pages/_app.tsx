@@ -12,10 +12,11 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <Script
+        id="GoogleTagManager-1"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-      <Script strategy="lazyOnload">
+      <Script strategy="lazyOnload" id="GoogleTagManager-2">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
