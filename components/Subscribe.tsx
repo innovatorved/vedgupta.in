@@ -12,6 +12,26 @@ export default function Subscribe() {
 
   const subscribe = async (e) => {
     e.preventDefault();
+    setForm({ state: Form.Loading });
+
+    let email = inputEl.current.value;
+    let res = await fetch(`/api/subscribe?email=${email}`);
+    const { success, error } = await res.json();
+
+    if (success) {
+      inputEl.current.value = '';
+      setForm({
+        state: Form.Success,
+        message: `Hooray! You're now on the list.`
+      });
+    }
+    else {
+      setForm({
+        state: Form.Error,
+        message: `Some error Occured! Make sure EmailId is not registered`
+      });
+    }
+
   };
 
   return (
@@ -46,9 +66,8 @@ export default function Subscribe() {
         <SuccessMessage>{form.message}</SuccessMessage>
       ) : (
         <p className="text-sm text-gray-800 dark:text-gray-200">
-          {`${
-            subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
-          } subscribers – `}
+          {`${subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
+            } subscribers – `}
         </p>
       )}
     </div>

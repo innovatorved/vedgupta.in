@@ -60,6 +60,10 @@ model User {
   sessions      Session[]
 }
 
+model Newsletter {
+  email String @id
+}
+
 model VerificationToken {
   identifier String
   token      String   @unique
