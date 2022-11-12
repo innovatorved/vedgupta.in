@@ -24,14 +24,12 @@ export default function Subscribe() {
         state: Form.Success,
         message: `Hooray! You're now on the list.`
       });
-    }
-    else {
+    } else {
       setForm({
         state: Form.Error,
         message: `Some error Occured! Make sure EmailId is not registered`
       });
     }
-
   };
 
   return (
@@ -66,8 +64,9 @@ export default function Subscribe() {
         <SuccessMessage>{form.message}</SuccessMessage>
       ) : (
         <p className="text-sm text-gray-800 dark:text-gray-200">
-          {`${subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
-            } subscribers – `}
+          {`${
+            subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
+          } subscribers – `}
         </p>
       )}
     </div>
