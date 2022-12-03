@@ -1,5 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+const { GOOGLE_SITE_VERIFICATION, YANDEX_VERIFICATION } = process.env;
+
 export default function Document(props) {
   return (
     <Html lang="en">
@@ -41,9 +43,9 @@ export default function Document(props) {
           content="/static/favicons/browserconfig.xml"
           name="msapplication-config"
         />
-        <meta content="14d2e73487fa6c71" name="yandex-verification" />
+        <meta content={YANDEX_VERIFICATION} name="yandex-verification" />
         <meta
-          content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
+          content={GOOGLE_SITE_VERIFICATION}
           name="google-site-verification"
         />
         <meta
