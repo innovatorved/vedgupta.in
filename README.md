@@ -1,1 +1,1 @@
-# blog.nextinnovate.tech
+# nextinnovate.tech
