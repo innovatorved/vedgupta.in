@@ -8,7 +8,7 @@ export default function AnalyticsCard() {
   const { data } = useSWR<Views>('/api/views', fetcher);
 
   const pageViews = new Number(data?.total);
-  const link = 'http://localhost:3000';
+  const link = 'http://nextinnovate.tech';
 
   return (
     <MetricCard
