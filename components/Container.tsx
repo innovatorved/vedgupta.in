@@ -40,8 +40,7 @@ export default function Container(props) {
   const meta = {
     title: 'Ved Prakash Gupta – Developer, creator.',
     description: `Full Stack developer, JavaScript enthusiast, and Python Developer.`,
-    image:
-      'https://blog.nextinnovate.tech/static/images/innovatorved-banner.png',
+    image: 'https://nextinnovate.tech/static/images/innovatorved-banner.png',
     type: 'website',
     ...customMeta
   };
@@ -54,11 +53,11 @@ export default function Container(props) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://blog.nextinnovate.tech${router.asPath}`}
+          content={`https://nextinnovate.tech${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://blog.nextinnovate.tech${router.asPath}`}
+          href={`https://nextinnovate.tech${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Ved Prakash Gupta" />
