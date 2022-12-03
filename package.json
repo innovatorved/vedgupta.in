@@ -6,7 +6,9 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "sanity-start": "sanity start"
+    "sanity-start": "sanity start",
+    "sanity-build": "santiy build",
+    "sanity-deploy": "sanity deploy"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
