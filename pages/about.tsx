@@ -38,17 +38,8 @@ export default function About() {
           </ul>
           <h2>Bio</h2>
           <h3>Job Title</h3>
-          <p>Lee Robinson, VP of Developer Experience at Vercel</p>
-          <h3>Long, 3rd Person</h3>
-          <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web and leads the Next.js community. He leads the
-            community for the React framework Next.js and is an open-source
-            contributor. An educator, writer, and speaker, Lee has created
-            courses on React, Next.js, and web development.
-          </p>
-          <h3>Long, 1st Person</h3>
+          <p>Ved Gupta , Freelancer Software Developer</p>
+          <h3>Me</h3>
           <p>
             I am tech enthusiast Full Stack Software Developer compatible in
             various technologies that are needed and also compatible in
