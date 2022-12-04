@@ -50,35 +50,20 @@ export default function About() {
           </p>
           <h3>Long, 1st Person</h3>
           <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web. I'm a Next.js contributor and help
-            lead our open-source communities. I'm passionate about frontend
-            development and have created courses on React, Next.js, and web
-            development. I'm an advisor and investor in early stage startups.
-          </p>
-          <h3>Short, 3rd Person</h3>
-          <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web.
-          </p>
-          <h3>Short, 1st Person</h3>
-          <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web.
+            I am tech enthusiast Full Stack Software Developer compatible in
+            various technologies that are needed and also compatible in
+            Development , Deployment and Maintenance of an Application
           </p>
           <h3>Education</h3>
           <p>
-            Lee Robinson graduated from Iowa State University with a B.S. in
-            Computer Engineering.
+            Ved Prakash Gupta Pursue from Galgotias College of Engineering and
+            Technology with a B.tech in Information Technology.
           </p>
           <h2>Headshots</h2>
           <div className="flex space-x-8">
             <a href="/avatar.jpg">
               <Image
-                alt="Lee Robinson headshot"
+                alt="Ved Prakash Gupta headshot"
                 width={400}
                 quality={100}
                 src={avatar}
@@ -87,7 +72,7 @@ export default function About() {
             </a>
             <a href="/avatar-bw.jpg">
               <Image
-                alt="Lee Robinson headshot"
+                alt="Ved Prakash Gupta headshot"
                 width={400}
                 quality={100}
                 src={avatarBW}
