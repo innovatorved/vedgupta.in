@@ -25,8 +25,8 @@ export default function About() {
             </li>
             <li>
               Website:{' '}
-              <Link href="https://innovatorved.io">
-                <a>https://innovatorved.io</a>
+              <Link href="https://nextinnovate.tech">
+                <a>https://nextinnovate.tech</a>
               </Link>
             </li>
             <li>
