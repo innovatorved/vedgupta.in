@@ -7,7 +7,8 @@ module.exports = {
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
-      'cdn.sanity.io'
+      'cdn.sanity.io',
+      'usnajdxrvqmvtnunrroc.supabase.co'
     ]
   },
   experimental: {

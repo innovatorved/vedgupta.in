@@ -7,3 +7,4 @@ node_modules
 .sanity
 dist/
 node_modules/
+.env.local

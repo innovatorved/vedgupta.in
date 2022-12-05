@@ -27,6 +27,18 @@ function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
+function handleRawImage(props) {
+  return (
+    <Image
+      alt={props.alt}
+      className="rounded-lg"
+      width={props.width ? props.width : 100}
+      height={props.height ? props.height : 100}
+      {...props}
+    />
+  );
+}
+
 function Callout(props) {
   return (
     <div className="flex bg-gray-200 dark:bg-gray-800 rounded-lg p-4 my-8">
@@ -38,6 +50,7 @@ function Callout(props) {
 
 const MDXComponents = {
   Image: RoundedImage,
+  img: handleRawImage,
   ImageWithTheme,
   a: CustomLink,
   Callout,
