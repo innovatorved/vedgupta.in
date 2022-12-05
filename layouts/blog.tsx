@@ -55,19 +55,20 @@ export default function BlogLayout({
             className="rounded-sm"
           />
         </div>
-        <div className="text-gray-700 dark:text-white">
-          <h2 className="inline-block font-bold">{post.title}</h2>
-          {' - '}
+        <div className="text-gray-700 dark:text-white mt-3">
           <p>{post.excerpt}</p>
         </div>
         <Suspense fallback={null}>
           <div className="w-full mt-4 prose dark:prose-dark max-w-none">
             {children}
           </div>
-          <div className="m-4">
-            <span className="text-xs dark:prose-dark text-gray-700">
-              {`visit -> `}
-            </span>
+          <div className="mt-4 prose dark:prose-dark max-w-none">
+            <h2 id="link">
+              <a href="#link">
+                <span className="icon icon-link"></span>
+              </a>
+              🔗 Project Link
+            </h2>
             <a
               href={post.website}
               className="underline text-blue-600 hover:text-blue-700 dark:hover:text-blue-900 dark:visited:text-purple-600 visited:text-purple-900"
