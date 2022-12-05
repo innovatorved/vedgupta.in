@@ -14,14 +14,14 @@ export default function App({
       <Script
         id="GoogleTagManager-1"
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-TH5XM5TDW2`}
       />
       <Script strategy="lazyOnload" id="GoogleTagManager-2">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+          gtag('config', 'G-TH5XM5TDW2', {
           page_path: window.location.pathname,
           });
         `}
@@ -32,7 +32,7 @@ export default function App({
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer',${process.env.GOOGLE_TAG_MANAGER})
+        })(window,document,'script','dataLayer','GTM-NR39J8J')
         `}
       </Script>
 
