@@ -43,8 +43,8 @@ export default function Home() {
           </h3>
           <div className="flex gap-6 flex-col md:flex-row">
             <BlogPostCard
-              title="Web Assembly , the future of Web Technology ?"
-              slug=""
+              title="Gradio Web UI Implementation of Whisper to translate and transcribe the speech"
+              slug="whisper-openai-web-ui-implementation"
               gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
             />
             <BlogPostCard
