@@ -67,7 +67,7 @@ export default function BlogLayout({
               <a href="#link">
                 <span className="icon icon-link"></span>
               </a>
-              🔗 Project Link
+              🔗 Related Link
             </h2>
             <a
               href={post.website}

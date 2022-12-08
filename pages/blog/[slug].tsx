@@ -13,7 +13,6 @@ export default function PostPage({ post }: { post: Post }) {
     const tweet = post.tweets.find((tweet) => tweet.id === id);
     return <Tweet {...tweet} />;
   };
-
   return (
     <BlogLayout post={post}>
       <MDXRemote
