@@ -17,7 +17,11 @@ export default function App({
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=G-TH5XM5TDW2`}
       />
-      <Script strategy="lazyOnload" id="GoogleTagManager-2" type="text/partytown">
+      <Script
+        strategy="lazyOnload"
+        id="GoogleTagManager-2"
+        type="text/partytown"
+      >
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
