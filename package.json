@@ -2,7 +2,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "next build",
+    "build": "yarn run partytown && next build",
+    "partytown": "partytown copylib public/~partytown",
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
@@ -11,6 +12,7 @@
     "sanity-deploy": "sanity deploy"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.3",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.3.1",
     "@sanity/image-url": "^1.0.1",
@@ -60,6 +62,6 @@
     "trailingComma": "none"
   },
   "engines": {
-    "node": "^14.15.0 || ^16.13.0"
+    "node": "^16.13.0"
   }
 }

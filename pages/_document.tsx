@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { Partytown } from '@builder.io/partytown/react';
 
 const { GOOGLE_SITE_VERIFICATION, YANDEX_VERIFICATION } = process.env;
 
@@ -52,6 +53,7 @@ export default function Document(props) {
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           name="robots"
         />
+        <Partytown debug={true} forward={['dataLayer.push']} />
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
         <Main />
