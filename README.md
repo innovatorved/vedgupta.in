@@ -1,5 +1,3 @@
 # nextinnovate.tech
 
-## Credit goes to
-
-https://leerob.io/
+## Credit ![https://leerob.io/](https://leerob.io/)
