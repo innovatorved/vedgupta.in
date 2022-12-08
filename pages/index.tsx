@@ -31,7 +31,6 @@ export default function Home() {
                 height={176}
                 width={176}
                 src="/avatar.jpg"
-                sizes="30vw"
                 priority
                 className="rounded-full filter grayscale"
               />

@@ -30,7 +30,6 @@ export default function BlogLayout({
               alt="Ved Gupta"
               height={32}
               width={32}
-              sizes="20vw"
               src={urlForImage(post.author.image).url()}
               className="rounded-full"
             />
@@ -50,7 +49,6 @@ export default function BlogLayout({
             alt={post.title}
             height={1024}
             width={1024}
-            sizes="100vw"
             src={urlForImage(post.coverImage).url()}
             className="rounded-sm"
           />
