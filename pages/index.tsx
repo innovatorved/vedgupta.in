@@ -22,7 +22,9 @@ export default function Home() {
                 <span className="font-semibold">Developer</span>
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-16">
-                Love to help Developers. Always Open for Contributions
+                It's my passion to write code and solve problems as a Software
+                Developer. Love to help Developers. Always Open for
+                Contributions
               </p>
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
