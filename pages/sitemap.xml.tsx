@@ -7,7 +7,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
           .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://nextinnovate.tech/${slug}`}</loc>
+                    <loc>${`https://vedgupta.in/${slug}`}</loc>
                 </url>
             `;
           })

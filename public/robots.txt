@@ -1,3 +1,3 @@
 User-agent: *
-Sitemap: https://nextinnovate.tech/sitemap.xml
+Sitemap: https://vedgupta.in/sitemap.xml
 Disallow:
