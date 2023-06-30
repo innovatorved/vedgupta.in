@@ -4,7 +4,7 @@ import { markdownSchema } from 'sanity-plugin-markdown';
 
 export default createConfig({
   name: 'default',
-  title: 'blog.nextinnovate.tech',
+  title: 'sanity.vedgupta.in',
   api: {
     projectId: 'vwh9oig9',
     dataset: 'production'
