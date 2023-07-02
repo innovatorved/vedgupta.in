@@ -24,10 +24,9 @@ export default function Blog({
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Blog
         </h1>
-        <p className="mb-4 text-gray-600 dark:text-gray-400">
+        <p className="mb-4 text-gray-600 dark:text-gray-400 text-sm">
           {`           
-            I am tech enthusiast Full Stack Software Developer compatible in various technologies that are needed and also compatible in Development , Deployment and Maintenance of an Application. 
-            Mostly of my work is in web development and Python Automation. 
+            I'm a tech-enthusiast full-stack software developer. This blog section where I share my views, learnings, and interesting finds in the tech space.
             In total, I've written ${posts.length} articles on my blog. 
           `}
         </p>
@@ -56,9 +55,7 @@ export default function Blog({
         </div>
         {!searchValue && <></>}
         <Suspense fallback={null}>
-          <h2 className="mt-8 mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-            All Posts
-          </h2>
+          <h2 className="mt-8 mb-6 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white" />
           {!filteredBlogPosts.length && (
             <p className="mb-4 text-gray-600 dark:text-gray-400">
               No posts found.

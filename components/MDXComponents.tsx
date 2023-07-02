@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import ProsCard from 'components/ProsCard';
 import ConsCard from 'components/ConsCard';
-import Unsplash from 'components/metrics/Unsplash';
 import Analytics from 'components/metrics/Analytics';
 import Step from 'components/Step';
 import ImageWithTheme from 'components/ImageWithTheme';
@@ -14,8 +13,8 @@ const CustomLink = (props) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
+      <Link href={href} {...props}>
+        {props.children}
       </Link>
     );
   }
@@ -57,8 +56,7 @@ const MDXComponents = {
   Analytics,
   ConsCard,
   ProsCard,
-  Step,
-  Unsplash
+  Step
 };
 
 export default MDXComponents;

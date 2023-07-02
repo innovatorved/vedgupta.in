@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import Container from 'components/Container';
 import avatar from 'public/avatar.jpg';
@@ -25,9 +25,7 @@ export default function About() {
             </li>
             <li>
               Website:{' '}
-              <Link href="https://vedgupta.in">
-                <a>https://vedgupta.in</a>
-              </Link>
+              <Link href="https://vedgupta.in">https://vedgupta.in</Link>
             </li>
             <li>
               LinkedIn:{' '}

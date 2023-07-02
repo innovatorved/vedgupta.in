@@ -1,3 +1,5 @@
 .next
 .vercel
 .sanity
+public/~partytown/*
+*.config.ts

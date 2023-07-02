@@ -11,7 +11,7 @@ export default function Newsletter() {
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Newsletter
         </h1>
-        <p className="mb-4 text-gray-600 dark:text-gray-400">
+        <p className="mb-4 text-gray-600 dark:text-gray-400 text-sm">
           My newsletter provides a behind-the-scenes look into what I'm working
           on and writing about. I frequently share some of my favorite articles
           I've read, as well as anything fascinating about technology.

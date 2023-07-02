@@ -12,9 +12,9 @@ export default function GuestbookPage({ fallbackData }) {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Guestbook
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Leave a comment below. It could be anything – appreciation,
-          information, wisdom, or even humor. Surprise me!
+        <p className="text-gray-600 text-sm dark:text-gray-400 mb-8 mx-4">
+          Leave a comment below. It could be anything – appreciation ,
+          information , wisdom , or even humor. Surprise me!
         </p>
         <Guestbook fallbackData={fallbackData} />
       </div>
@@ -40,6 +40,6 @@ export async function getStaticProps() {
     props: {
       fallbackData
     },
-    revalidate: 60
+    revalidate: 180
   };
 }

@@ -10,7 +10,7 @@ export default function NotFound() {
         <iframe
           className="w-[100%] md:w-[80%] h-[450px] sm:h-[600px] md:h-[750px]"
           sandbox="allow-same-origin allow-scripts allow-forms"
-          src={'/pdf/VedGupta_Resume.pdf'}
+          src={'/pdf/VEDGUPTA_RESUME.pdf'}
           style={{
             marginLeft: 'auto',
             marginRight: 'auto'

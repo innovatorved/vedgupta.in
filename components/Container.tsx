@@ -13,17 +13,16 @@ function NavItem({ href, text }) {
   const isActive = router.asPath === href;
 
   return (
-    <NextLink href={href}>
-      <a
-        className={cn(
-          isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
-        )}
-      >
-        <span className="capsize">{text}</span>
-      </a>
+    <NextLink
+      href={href}
+      className={cn(
+        isActive
+          ? 'font-semibold text-gray-800 dark:text-gray-200'
+          : 'font-normal text-gray-600 dark:text-gray-400',
+        'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+      )}
+    >
+      <span className="capsize">{text}</span>
     </NextLink>
   );
 }
@@ -55,10 +54,7 @@ export default function Container(props) {
           property="og:url"
           content={`https://vedgupta.in${router.asPath}`}
         />
-        <link
-          rel="canonical"
-          href={`https://vedgupta.in${router.asPath}`}
-        />
+        <link rel="canonical" href={`https://vedgupta.in${router.asPath}`} />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Ved Prakash Gupta" />
         <meta property="og:description" content={meta.description} />
@@ -82,7 +78,6 @@ export default function Container(props) {
             <MobileMenu />
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
-            <NavItem href="/dashboard" text="Dashboard" />
             <NavItem href="/blog" text="Blog" />
             <NavItem href="/snippets" text="Snippets" />
           </div>

@@ -12,9 +12,9 @@ module.exports = {
     ]
   },
   experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true
+    legacyBrowsers: false
   },
+
   async headers() {
     return [
       {

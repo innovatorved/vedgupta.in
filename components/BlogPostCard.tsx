@@ -1,56 +1,51 @@
-import Link from 'next/link';
 import useSWR from 'swr';
-import cn from 'classnames';
 
 import fetcher from 'lib/fetcher';
 import { Views } from 'lib/types';
 
-export default function BlogPostCard({ title, slug, gradient }) {
+export default function BlogPostCard({ slug, name }) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
   return (
-    <Link href={`/blog/${slug}`}>
-      <a
-        className={cn(
-          'transform hover:scale-[1.01] transition-all',
-          'rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1',
-          gradient
-        )}
-      >
-        <div className="flex flex-col justify-between h-full bg-white dark:bg-gray-900 rounded-lg p-4">
-          <div className="flex flex-col md:flex-row justify-between">
-            <h4 className="text-lg md:text-lg font-medium mb-6 sm:mb-10 w-full text-gray-900 dark:text-gray-100 tracking-tight">
-              {title}
-            </h4>
-          </div>
-          <div className="flex items-center text-gray-800 dark:text-gray-200 capsize">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-            <span className="ml-2 align-baseline capsize">
-              {views ? new Number(views).toLocaleString() : '–––'}
-            </span>
-          </div>
-        </div>
-      </a>
-    </Link>
+    <a
+      href={`/blog/${slug}`}
+      className="border border-neutral-200 dark:border-neutral-700 bg-neutral-50  dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full"
+    >
+      <div className="flex flex-col">
+        <p className="font-semibold text-neutral-900 dark:text-neutral-100">
+          {name}
+        </p>
+        <ViewCounter views={views} />
+      </div>
+      <div className="text-neutral-700 dark:text-neutral-300">
+        <ArrowIcon />
+      </div>
+    </a>
+  );
+}
+
+export function ArrowIcon() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+export function ViewCounter({ views }) {
+  return (
+    <p className="text-neutral-600 text-sm dark:text-neutral-400">{`${
+      views ? views : '–––'
+    } views`}</p>
   );
 }

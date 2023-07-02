@@ -8,7 +8,6 @@ import LoadingSpinner from 'components/LoadingSpinner';
 export default function Subscribe() {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   const inputEl = useRef(null);
-  const subscriberCount = 0;
 
   const subscribe = async (e) => {
     e.preventDefault();
@@ -33,15 +32,8 @@ export default function Subscribe() {
   };
 
   return (
-    <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
-      <p className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
-        Subscribe to the newsletter
-      </p>
-      <p className="my-1 text-gray-800 dark:text-gray-200">
-        Get emails from me about web development, tech, and early access to new
-        articles.
-      </p>
-      <form className="relative my-4" onSubmit={subscribe}>
+    <div className="my-4 w-full">
+      <form className="relative mt-4 mb-2" onSubmit={subscribe}>
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
@@ -63,12 +55,25 @@ export default function Subscribe() {
       ) : form.state === Form.Success ? (
         <SuccessMessage>{form.message}</SuccessMessage>
       ) : (
-        <p className="text-sm text-gray-800 dark:text-gray-200">
-          {`${
-            subscriberCount > 0 ? subscriberCount.toLocaleString() : '-'
-          } subscribers – `}
-        </p>
+        <SubscribeMessage>Subscribe to the newsletter</SubscribeMessage>
       )}
     </div>
+  );
+}
+
+function SubscribeMessage({ children }) {
+  return (
+    <p className="flex items-center text-sm text-gray-800 dark:text-gray-200 font-semibold">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        className="mr-2 h-4 w-4"
+      >
+        <path d="M10.5 3.5H1.75a.25.25 0 0 0-.25.25v.32L8 7.88l3.02-1.77a.75.75 0 0 1 .758 1.295L8.379 9.397a.75.75 0 0 1-.758 0L1.5 5.809v6.441c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-4.5a.75.75 0 0 1 1.5 0v4.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25V4.513a.75.75 0 0 1 0-.027V3.75C0 2.784.784 2 1.75 2h8.75a.75.75 0 0 1 0 1.5Z"></path>
+        <path d="M14 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+      </svg>
+      {children}
+    </p>
   );
 }
