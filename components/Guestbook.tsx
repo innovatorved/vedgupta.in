@@ -90,7 +90,7 @@ export default function Guestbook({ fallbackData }) {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-max">
       <div>
         {!session && <SignIn />}
         {session?.user && (
