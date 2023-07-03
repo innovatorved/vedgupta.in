@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
           justifyContent: 'center',
           fontSize: 28,
           backgroundColor: 'white',
-          backgroundImage: `url(http://localhost:3000/static/background/background-4.jpg)`,
+          backgroundImage: `url(https://vedgupta.in/static/background/background-4.jpg)`,
           backgroundSize: 'cover'
         }}
       >
@@ -36,7 +36,7 @@ export async function GET(req: NextRequest) {
             left: 100,
             filter: 'grayscale(100%)'
           }}
-          src="http://localhost:3000/static/favicons/android-chrome-512x512.png"
+          src="https://vedgupta.in/static/favicons/android-chrome-512x512.png"
         />
         <div
           style={{
@@ -68,7 +68,7 @@ export async function GET(req: NextRequest) {
               height: 100
             }}
             tw="rounded-lg"
-            src="http://localhost:3000/avatar-square.jpg"
+            src="https://vedgupta.in/avatar-square.jpg"
             width={100}
             height={100}
           />
