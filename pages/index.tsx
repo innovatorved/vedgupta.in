@@ -1,10 +1,11 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../components/Container';
-import BlogPostCard from '../components/BlogPostCard';
+import BlogPostCard, { ArrowIcon } from '../components/BlogPostCard';
 import Subscribe from '../components/Subscribe';
+import GithubLink from '../components/metrics/Github';
 
 export default function Home() {
   return (
@@ -78,6 +79,10 @@ export default function Home() {
               </svg>
             </>
           </Link>
+
+          <div className="mt-16 flex flex-col sm:flex-row space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 w-full">
+            <GithubLink username="innovatorved" />
+          </div>
 
           <span className="h-16" />
           <Subscribe />

@@ -8,7 +8,8 @@ module.exports = {
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
       'cdn.sanity.io',
-      'usnajdxrvqmvtnunrroc.supabase.co'
+      'usnajdxrvqmvtnunrroc.supabase.co',
+      'avatars.githubusercontent.com'
     ]
   },
   experimental: {
