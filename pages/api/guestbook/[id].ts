@@ -10,7 +10,10 @@ export default async function handler(
   const session = await getServerSession(req, res, authOptions);
 
   const { id } = req.query;
-  const { email } = session.user;
+  if (!session?.user) {
+    return res.status(400).send('Bad request');
+  }
+  const { email } = session?.user;
 
   const entry = await prisma.guestbook.findUnique({
     where: {
@@ -20,14 +23,14 @@ export default async function handler(
 
   if (req.method === 'GET') {
     return res.json({
-      id: entry.id.toString(),
-      body: entry.body,
-      created_by: entry.created_by,
-      updated_at: entry.updated_at
+      id: entry?.id.toString(),
+      body: entry?.body,
+      created_by: entry?.created_by,
+      updated_at: entry?.updated_at
     });
   }
 
-  if (!session || email !== entry.email) {
+  if (!session || email !== entry?.email) {
     return res.status(403).send('Unauthorized');
   }
 
