@@ -7,18 +7,18 @@ import LoadingSpinner from 'components/LoadingSpinner';
 
 export default function Subscribe() {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const inputEl = useRef(null);
+  const inputEl = useRef<HTMLInputElement | null>(null);
 
   const subscribe = async (e) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    let email = inputEl.current.value;
+    let email = inputEl.current?.value;
     let res = await fetch(`/api/subscribe?email=${email}`);
     const { success, error } = await res.json();
 
     if (success) {
-      inputEl.current.value = '';
+      inputEl.current && (inputEl.current.value = '');
       setForm({
         state: Form.Success,
         message: `Hooray! You're now on the list.`

@@ -80,7 +80,7 @@ export default function BlogLayout({
           </div>
           <div className="prose dark:prose-dark space-x-2 mt-8">
             <span>Categories :</span>
-            {post.categories.map((category: Categories, key) => {
+            {post.categories?.map((category: Categories, key) => {
               return (
                 <span
                   key={key}
