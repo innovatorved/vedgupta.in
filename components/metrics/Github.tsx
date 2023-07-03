@@ -21,7 +21,7 @@ export default function GithubLink({ username }) {
     <a
       href={link}
       target="_blank"
-      className="border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-[50%]"
+      className="border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 md:w-[50%] w-full"
     >
       <div className="flex items-center space-x-3">
         <div className="relative h-16">
