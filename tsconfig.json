@@ -36,7 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "pages/api/revalidate.js"  ],
   "exclude": [
     "node_modules"
   ]

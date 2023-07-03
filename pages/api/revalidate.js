@@ -1,13 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import { sanityClient } from 'lib/sanity-server';
 import { postUpdatedQuery } from 'lib/queries';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
+export default async function handler(req, res) {
+  const signature = req.headers[SIGNATURE_HEADER_NAME];
   const body = await readBody(req); // Read the body into a string
   if (
     !isValidSignature(
@@ -43,7 +39,7 @@ export const config = {
   }
 };
 
-async function readBody(readable: NextApiRequest) {
+async function readBody(readable) {
   const chunks = [];
   for await (const chunk of readable) {
     chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
