@@ -1,10 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getStudentsData } from 'controller/admin.controller';
+import { User, getServerSession } from 'next-auth';
+import { authOptions } from '../auth/[...nextauth]';
+import { Role } from '@prisma/client';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const user = await getUser(req, res);
+  if(user.role !== Role.ADMIN){
+    throw new Error("Unauthorized")
+  }
   try {
     if (req.method === 'GET') {
       return await handleGET(req, res);
@@ -30,3 +37,16 @@ const handleGET = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await getStudentsData(page, per_page, searchQuery as string);
   return res.json(response);
 };
+
+
+export async function getUser(
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<User> {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
+    throw new Error('You must be authenticated to do this');
+  }
+  const { user } = session;
+  return user;
+}
