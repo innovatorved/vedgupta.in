@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "yarn run db:seed && yarn run partytown && yarn run prisma:generate && next build",
+    "build": "yarn run partytown && yarn run prisma:generate && next build",
     "partytown": "partytown copylib public/~partytown",
     "dev": "yarn run prisma:generate && next dev",
     "start": "next start",
