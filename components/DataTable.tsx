@@ -121,7 +121,7 @@ export default function DataTable({
         {data.map((item, index) => (
           <div
             key={index}
-            className="rounded-lg shadow-md bg-gray-300 text-gray-700"
+            className="rounded-lg shadow-md bg-gray-200 text-gray-700"
           >
             <div className="px-6 py-4 flex flex-col">
               {selectedFields.map((field, i) => (
