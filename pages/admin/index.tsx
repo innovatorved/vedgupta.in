@@ -29,6 +29,7 @@ const GalgotiaStudents = () => {
     const data = await fetcher(
       `/api/admin/students?page=${page}&searchQuery=${searchQuery}`
     );
+    console.log(data);
     setTotalStudents(data.totalStudents);
     setStudents(data.students);
     setLoading(false);
@@ -92,6 +93,7 @@ const GalgotiaStudents = () => {
       columns={columns}
       total={totalStudents}
       data={students}
+      page={page}
       handleNextPage={handleNextPage}
       handlePrevPage={handlePrevPage}
       handleSearch={handleSearch}

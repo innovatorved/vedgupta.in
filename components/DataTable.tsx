@@ -10,6 +10,7 @@ export interface DataTableColumn {
 interface DataTableProps {
   columns: DataTableColumn[];
   data: any[];
+  page?: number;
   total?: number;
   handleNextPage?: () => void;
   handlePrevPage?: () => void;
@@ -20,6 +21,7 @@ export default function DataTable({
   columns,
   data,
   total,
+  page,
   handleNextPage,
   handlePrevPage,
   handleSearch
@@ -151,16 +153,42 @@ export default function DataTable({
             className="bg-gray-300 text-xs hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
             onClick={handlePrevPage}
           >
-            Prev Page
+            <ArrowIcon className={'-rotate-90'} />
           </button>
+          {page && (
+            <button
+              className="text-gray-300 bg-gray-800 text-xs rounded py-2 px-2 cursor-none"
+              disabled={true}
+            >
+              {page}
+            </button>
+          )}
           <button
-            className="bg-gray-300 text-xs hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+            className="bg-gray-300 text-xs hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded"
             onClick={handleNextPage}
           >
-            Next Page
+            <ArrowIcon className={'rotate-45'} />
           </button>
         </div>
       )}
     </div>
+  );
+}
+
+export function ArrowIcon({ className }) {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+        fill="currentColor"
+      />
+    </svg>
   );
 }
