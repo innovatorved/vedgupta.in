@@ -7,6 +7,8 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
+import { useSession } from 'next-auth/react';
+import { Role } from 'lib/enum';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -30,6 +32,15 @@ function NavItem({ href, text }) {
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    if (session) {
+      setIsAdmin(session.user.role === Role.ADMIN);
+    }
+  }, [session]);
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
@@ -75,11 +86,12 @@ export default function Container(props) {
             Skip to content
           </a>
           <div className="ml-[-0.60rem]">
-            <MobileMenu />
+            <MobileMenu isAdmin={isAdmin} />
             <NavItem href="/" text="Home" />
             <NavItem href="/guestbook" text="Guestbook" />
             <NavItem href="/blog" text="Blog" />
             <NavItem href="/snippets" text="Snippets" />
+            {isAdmin && <NavItem href="/admin" text="Admin Console" />}
           </div>
           <button
             aria-label="Toggle Dark Mode"

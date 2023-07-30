@@ -1,20 +1,24 @@
 import { PrismaClient } from '@prisma/client';
-
-// PrismaClient is attached to the `global` object in development to prevent
-// exhausting your database connection limit.
-//
-// Learn more:
-// https://pris.ly/d/help/next-js-best-practices
+import { PrismaClient as PrismaClientMongo } from '@prisma/mongoclient';
 
 let prisma: PrismaClient;
+let prismaMongo: PrismaClientMongo;
 
 if (process.env.NODE_ENV === 'production') {
   prisma = new PrismaClient();
+  prismaMongo = new PrismaClientMongo();
 } else {
   if (!global.prisma) {
     global.prisma = new PrismaClient();
   }
   prisma = global.prisma;
+
+  if (!global.prismaMongo) {
+    global.prismaMongo = new PrismaClientMongo();
+  }
+  prismaMongo = global.prismaMongo;
 }
+
+export { prisma, prismaMongo };
 
 export default prisma;
