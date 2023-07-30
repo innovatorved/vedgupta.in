@@ -41,6 +41,7 @@ const GalgotiaStudents = () => {
 
   const handleSearch = useCallback((e) => {
     setSearchQuery(e.target.value);
+    setPage(0);
   }, []);
 
   const handleNextPage = () => {
