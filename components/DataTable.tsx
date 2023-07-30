@@ -115,37 +115,31 @@ export default function DataTable({
           </svg>
         </div>
       )}
-      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
-          <tr>
-            {selectedFields.map((field) => (
-              <th
-                key={field.name}
-                scope="col"
-                className="px-6 py-3 bg-gray-50 dark:bg-gray-800"
-              >
-                {field.name}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, id) => (
-            <tr
-              key={id}
-              className="border-b border-gray-200 dark:border-gray-700"
-            >
-              {selectedFields.map((field) => (
-                <td key={field.name} className="px-6 py-4">
-                  {field.datetime
-                    ? formatDate(item[field.select])
-                    : item[field.select]}
-                </td>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="rounded-lg shadow-md bg-gray-300 text-gray-700"
+          >
+            <div className="px-6 py-4 flex flex-col">
+              {selectedFields.map((field, i) => (
+                <React.Fragment key={i}>
+                  {
+                    <div className="flex flex-row justify-between text-sm border-gray-200 dark:border-gray-700">
+                      <div className="font-bold">{field.name}</div>
+                      <div className="ml-2">
+                        {field.datetime
+                          ? formatDate(item[field.select])
+                          : item[field.select]}
+                      </div>
+                    </div>
+                  }
+                </React.Fragment>
               ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+            </div>
+          </div>
+        ))}
+      </div>
       {total && (
         <div className="mt-4 text-gray-700 dark:text-gray-400 text-right">
           Total: {total}

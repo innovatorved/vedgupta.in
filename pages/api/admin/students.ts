@@ -9,8 +9,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const user = await getUser(req, res);
-  if(user.role !== Role.ADMIN){
-    throw new Error("Unauthorized")
+  if (user.role !== Role.ADMIN) {
+    throw new Error('Unauthorized');
   }
   try {
     if (req.method === 'GET') {
@@ -38,10 +38,9 @@ const handleGET = async (req: NextApiRequest, res: NextApiResponse) => {
   return res.json(response);
 };
 
-
 export async function getUser(
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse
 ): Promise<User> {
   const session = await getServerSession(req, res, authOptions);
   if (!session) {
