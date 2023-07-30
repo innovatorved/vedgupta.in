@@ -54,8 +54,16 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  role          Role      @default(USER)
+  password      String?
   accounts      Account[]
   sessions      Session[]
+  createdAt     DateTime  @default(now())
+}
+
+enum Role {
+  ADMIN
+  USER
 }
 
 model Newsletter {

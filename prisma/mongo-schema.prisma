@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/@prisma/mongoclient"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL_MONGO")
+}
+
+model Student {
+  id                                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  RollNumber                            Int      @unique
+  EnrollmentNoAKTU                      Int      @unique
+  FullName                              String
+  Gender                                GENDER
+  DOB                                   DateTime
+  TenthPercentageOrCGPA                 Float
+  TenthBoardsName                       String
+  TenthPassingYear                      Int
+  QualificationAfterTenth               String
+  TwelfthOrDiplomaPercentage            Float
+  TwelfthOrDiplomaBoardOrUniversityName String
+  TwelfthOrDiplomaPassingYear           Int
+  AdmissionInBTechThrough               String
+  BTechSem1SGPA                         Float?
+  BTechSem2SGPA                         Float?
+  BTechSem3SGPA                         Float?
+  BTechSem4SGPA                         Float?
+  BTechSem5SGPA                         Float?
+  EmailId                               String   @unique
+  BranchId                              String   @db.ObjectId
+  PassoutYear                           Int      @default(2023)
+
+  Branch Branch? @relation(fields: [BranchId], references: [BranchId])
+}
+
+model Branch {
+  BranchId    String    @id @default(auto()) @map("_id") @db.ObjectId
+  Branch      String    @unique
+  Description String?
+  Students    Student[]
+}
+
+enum GENDER {
+  M
+  F
+}

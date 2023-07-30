@@ -71,3 +71,42 @@ export type YouTube = {
 export type GitHub = {
   stars: number;
 };
+
+export interface Student {
+  id: string;
+  RollNumber: number;
+  EnrollmentNoAKTU: number;
+  FullName: string;
+  Gender: 'M' | 'F';
+  DOB: Date;
+  TenthPercentageOrCGPA: number;
+  TenthBoardsName: string;
+  TenthPassingYear: number;
+  QualificationAfterTenth: string;
+  TwelfthOrDiplomaPercentage: number;
+  TwelfthOrDiplomaBoardOrUniversityName: string;
+  TwelfthOrDiplomaPassingYear: number;
+  AdmissionInBTechThrough: string;
+  BTechSem1SGPA?: number;
+  BTechSem2SGPA?: number;
+  BTechSem3SGPA?: number;
+  BTechSem4SGPA?: number;
+  BTechSem5SGPA?: number;
+  EmailId: string;
+  BranchId: string;
+  PassoutYear: number;
+}
+
+export interface Branch {
+  BranchId: string;
+  Branch: string;
+  Description?: string;
+  Students: Student[];
+}
+
+export interface DataTableColumn {
+  name: string;
+  select: string;
+  required?: boolean;
+  datetime?: boolean;
+}

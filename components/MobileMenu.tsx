@@ -4,7 +4,7 @@ import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
 
-export default function MobileMenu() {
+export default function MobileMenu({ isAdmin }: { isAdmin: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
     isMenuOpen,
@@ -57,6 +57,16 @@ export default function MobileMenu() {
               Home
             </Link>
           </li>
+          {isAdmin && (
+            <li
+              className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+              style={{ transitionDelay: '150ms' }}
+            >
+              <Link href="/admin" className="flex w-auto pb-4">
+                Admin Console
+              </Link>
+            </li>
+          )}
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '175ms' }}

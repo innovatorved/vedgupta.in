@@ -13,7 +13,8 @@ module.exports = {
     ]
   },
   experimental: {
-    legacyBrowsers: false
+    legacyBrowsers: false,
+    serverActions: true
   },
 
   async headers() {
