@@ -59,7 +59,7 @@ export default function DataTable({
   }, []);
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div className="relative overflow-x-auto sm:rounded-lg">
       <div className="mb-4">
         <label
           htmlFor="field-select"
@@ -157,7 +157,7 @@ export default function DataTable({
           </button>
           {page && (
             <button
-              className="text-gray-300 bg-gray-800 text-xs rounded py-2 px-2 cursor-none"
+              className="dark:text-gray-300 dark:bg-gray-800 text-xs rounded py-2 px-2 cursor-none"
               disabled={true}
             >
               {page}
