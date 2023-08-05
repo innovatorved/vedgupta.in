@@ -31,6 +31,7 @@ module.exports = {
         source: '/contact',
         destination: 'mailto:contact@vedgupta.in',
         permanent: true,
+        basePath: false,
       },
     ]
   },
