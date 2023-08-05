@@ -24,7 +24,16 @@ module.exports = {
         headers: securityHeaders
       }
     ];
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/contact',
+        destination: 'mailto:contact@vedgupta.in',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 // https://nextjs.org/docs/advanced-features/security-headers
