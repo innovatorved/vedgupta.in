@@ -47,7 +47,7 @@ export default function Footer() {
             GitHub
           </ExternalLink>
           <ExternalLink href="https://status.vedgupta.in">
-            <div className="flex">
+            <div className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={6}
