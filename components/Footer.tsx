@@ -46,6 +46,19 @@ export default function Footer() {
           <ExternalLink href="https://github.com/innovatorved">
             GitHub
           </ExternalLink>
+          <ExternalLink href="https://status.vedgupta.in">
+            <div className="flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={6}
+                viewBox="0 0 10 10"
+                className="mr-1"
+              >
+                <circle cx="5" cy="5" r="5" fill="#00FF00" />
+              </svg>
+              Status
+            </div>
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
           <Link
