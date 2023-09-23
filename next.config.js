@@ -31,10 +31,10 @@ module.exports = {
         source: '/contact',
         destination: 'mailto:contact@vedgupta.in',
         permanent: true,
-        basePath: false,
-      },
-    ]
-  },
+        basePath: false
+      }
+    ];
+  }
 };
 
 // https://nextjs.org/docs/advanced-features/security-headers

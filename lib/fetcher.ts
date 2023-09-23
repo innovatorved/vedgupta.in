@@ -7,7 +7,9 @@ export default async function fetcher<JSON = any>(
 }
 
 export const VerifyCredentials = async (credentials: any) => {
-  const CREDENTIALS_URL = `${process.env.NEXTAUTH_URL}/api/user/check-credentials`;
+  const CREDENTIALS_URL = `${
+    process.env.NEXTAUTH_URL ?? 'http://localhost:3000'
+  }/api/user/check-credentials`;
   const data = {
     method: 'POST',
     headers: {
