@@ -14,7 +14,8 @@ module.exports = {
   },
   experimental: {
     legacyBrowsers: false,
-    serverActions: true
+    serverActions: true,
+    nextScriptWorkers: true,
   },
 
   async headers() {

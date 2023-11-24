@@ -11,7 +11,7 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
-      <Script id="GoogleTagManager" type="text/partytown">
+      <Script id="GoogleTagManager-3" type="text/partytown">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
