@@ -15,6 +15,7 @@ module.exports = {
   experimental: {
     legacyBrowsers: false,
     serverActions: true,
+    nextScriptWorkers: true,
   },
 
   async headers() {
@@ -41,7 +42,7 @@ module.exports = {
 const ContentSecurityPolicy = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com www.googletagmanager.com;
-    child-src *.youtube.com *.google.com *.twitter.com 'self' www.googletagmanager.com;
+    child-src *.youtube.com *.google.com *.twitter.com 'self';
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
     media-src 'none';
