@@ -3,6 +3,8 @@ import 'styles/global.css';
 import { ThemeProvider } from 'next-themes';
 import { SessionProvider } from 'next-auth/react';
 
+import { Partytown } from '@builder.io/partytown/react';
+
 import Script from 'next/script';
 
 export default function App({
@@ -38,7 +40,7 @@ export default function App({
         })(window,document,'script','dataLayer','GTM-NR39J8J');
         `}
       </Script> */}
-
+<Partytown debug={true} forward={['dataLayer.push']} />
 <script src="https://www.googletagmanager.com/gtag/js?id=G-QCP6LP889J" type="text/partytown" />
 <script
   type="text/partytown"
