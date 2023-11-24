@@ -11,13 +11,13 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
-      <Script id="GoogleTagManager-3" type="text/partytown">
+      <Script id="GoogleTagManager" type="text/partytown">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NR39J8J')
+        })(window,document,'script','dataLayer','GTM-NR39J8J');
         `}
       </Script>
 
