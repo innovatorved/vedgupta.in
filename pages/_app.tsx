@@ -11,26 +11,6 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
-      <Script
-        id="GoogleTagManager-1"
-        type="text/partytown"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-TH5XM5TDW2`}
-      />
-      <Script
-        strategy="lazyOnload"
-        id="GoogleTagManager-2"
-        type="text/partytown"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TH5XM5TDW2', {
-          page_path: window.location.pathname,
-          });
-        `}
-      </Script>
       <Script id="GoogleTagManager-3" type="text/partytown">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
