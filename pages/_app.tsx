@@ -14,11 +14,9 @@ export default function App({
       <Script
         id="GoogleTagManager-1"
         type="text/partytown"
-        strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=G-QCP6LP889J`}
       />
       <Script
-        strategy="lazyOnload"
         id="GoogleTagManager-2"
         type="text/partytown"
       >
