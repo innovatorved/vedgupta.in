@@ -70,7 +70,7 @@ export default function BlogLayout({
               🔗 Related Link
             </h2>
             <a
-              href={post.website}
+              href={`${post.website}?utm_source=vedgupta.in&utm_medium=Blog`}
               className="underline text-blue-600 hover:text-blue-700 dark:hover:text-blue-900 dark:visited:text-purple-600 visited:text-purple-900"
               target="_blank"
               rel="noopener noreferrer"
