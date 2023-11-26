@@ -1,3 +1,5 @@
 User-agent: *
 Sitemap: https://vedgupta.in/sitemap.xml
-Disallow:
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /~partytown/
