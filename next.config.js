@@ -13,7 +13,6 @@ module.exports = {
     ]
   },
   experimental: {
-    legacyBrowsers: false,
     serverActions: true
   },
 
