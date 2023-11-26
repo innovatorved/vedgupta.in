@@ -18,7 +18,7 @@ export async function getServerSideProps({ res }) {
   const allPosts = await sanityClient.fetch(postSlugsQuery);
   const allPages = [
     ...allPosts.map((slug) => `blog/${slug}`),
-    ...['', 'about', 'blog', 'guestbook', 'resume']
+    ...['', 'about', 'blog', 'guestbook', 'resume', 'newsletter', 'snippets']
   ];
 
   res.setHeader('Content-Type', 'text/xml');
